@@ -4,14 +4,23 @@ class InventoryManager:
     def __new__(cls):
         if not cls._instance:
             cls._instance = super().__new__(cls)
-            cls._instance.inventory = {"Cheese": 10, "Olives": 10, "Mushrooms": 10}
+            cls._instance.inventory = {
+                "Margherita": 10,
+                "Pepperoni": 10,
+                "Cheese": 15,
+                "Olives": 10,
+                "Mushrooms": 12,
+            }
         return cls._instance
 
-    def check_availability(self, topping):
-        return self.inventory.get(topping, 0) > 0
+    def check_availability(self, item):
+        return self.inventory.get(item, 0) > 0
 
-    def use_ingredient(self, topping):
-        if self.check_availability(topping):
-            self.inventory[topping] -= 1
+    def use_ingredient(self, item):
+        if self.check_availability(item):
+            self.inventory[item] -= 1
         else:
-            raise Exception(f"{topping} is out of stock.")
+            raise Exception(f"{item} is out of stock.")
+
+    def get_inventory(self):
+        return self.inventory

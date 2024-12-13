@@ -90,6 +90,3 @@ By using the **Factory**, **Decorator**, **Singleton**, and **Strategy** pattern
 - **Modularity**: Each component has a specific responsibility.
 - **Extensibility**: New pizzas, toppings, and payment methods can be added easily.
 - **Maintainability**: The code is clean and easy to understand.
-
-This design keeps the system simple and avoids unnecessary complexity while fulfilling all requirements effectively.
-
